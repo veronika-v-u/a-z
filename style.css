@@ -1,0 +1,895 @@
+:root {
+  --color-primary:   #81ADD0;   /* основной голубой */
+  --color-accent:    #4772e8;   /* акцентный розовый */
+  --color-bg-light:  #FFFFFF;   /* светлый фон */
+  --color-bg-dark:   #F5F5F5;   /* тёмный фон */
+  --color-text:      #000000;   /* основной текст */
+  --color-backgraund: #F8F3EA;
+}
+
+
+body{
+    font-family: 'Akrobat', sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 1920px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: var(--color-bg-light);
+}
+
+#main_section{
+    background-image: url('resources/fon.jpg');
+    height: 900px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 20px 110px 20px 100px;
+}
+
+.headerNav {
+    margin-left: auto; 
+}
+
+.headerNav ul {
+  display: flex;  
+  justify-content: space-between;    
+  list-style: none;  
+  margin: 0;           
+  padding: 0;
+  gap: 30px; 
+  margin-right: 20px;
+}
+
+nav ul li {
+  font-size: 16px;     
+}
+
+nav ul li a {
+  color: var(--color-bg-light);        
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-accent);
+}
+
+.media img{
+  width: 25px;
+  padding-right: 20px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: var(--color-bg-light);  
+}
+
+#name {
+    font-size: 35px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#name2 {
+    margin-top: 0;
+}
+
+/* элементы меню */
+#menu__toggle {
+  opacity: 0;
+}
+
+header {
+  position: relative; /* важно: базовый контекст для абсолютного позиционирования */
+  /* остальные ваши стили */
+}
+
+
+/* кнопка внутри header, позиция относительно header */
+.menu__btn {
+  position: absolute;
+  top: 0;
+  right: 60px; /* или left: 30px — в зависимости от желаемого места */
+  width: 26px;
+  height: 26px;
+  z-index: 50;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__box {
+  position: fixed; /* можно оставить, как у вас */
+  top: 0;
+  left: -100%;
+  /* остальное как есть */
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-bg-light);
+  border-radius: 100px;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 100px 0;
+  list-style: none;
+  background-color: var(--color-bg-dark);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+.menu__box img{
+  width: 35px;
+  padding-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.menu__item {
+  display: block;
+  padding: 5px 20px;
+  color: var(--color-bg-light);
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+.hamburger-menu{
+  display: none;
+}
+
+.menu__box a[href="#"] { 
+  cursor: pointer; 
+}
+
+ #menu__toggle:checked ~ .menu__box { 
+  transform: translateX(0); 
+  visibility: visible; 
+}
+
+/*Миссия*/
+
+.mission-section {
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* Левый блок */
+.mission-content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.mission-description p {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+/* Правый блок со статистикой */
+.mission-stats {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px 20px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-text {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+}
+
+/*Клиенты*/
+.clients-section {
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 50px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* Сетка 3 колонки */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px 60px; /* Отступы: 40px между рядами, 25px между колонками */
+}
+
+.client-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контейнер для изображения с закруглением */
+.image-wrapper {
+  width: 100%;
+  height: 150px;
+  border-radius: 30px; /* Сильное закругление углов */
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Чтобы фото заполняло блок без искажений */
+  display: block;
+  transition: transform 0.3s ease; /* Мягкий эффект при наведении */
+}
+
+/* Эффект при наведении на карточку */
+.client-card:hover img {
+  transform: scale(1.05);
+}
+
+.client-text {
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  padding-left: 5px; /* Небольшой отступ текста от края */
+}
+
+
+/*все клиенты*/
+.cases-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Akrobat', sans-serif; 
+}
+
+#main-title {
+  margin-bottom: 0px;
+}
+
+.case-card {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет заголовку занять верхнюю строку */
+  align-items: flex-start;
+  gap: 0px 80px; /* 40px отступ снизу от заголовка, 80px между текстом и фото */
+  margin-bottom: 10px;
+  max-width: 1200px;
+}
+
+.case-name {
+  width: 100%;
+  font-size: 40px;
+  margin-bottom: 0; 
+  text-transform: uppercase;
+}
+
+/* Магия чередования для колонок (теперь работает только на блоки текста и фото) */
+.case-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.case-card:nth-child(even) .case-name {
+  margin-left: 53%;
+}
+
+.case-info {
+  flex: 1;
+  min-width: 300px; /* Чтобы на средних экранах не слишком сужалось */
+}
+
+.case-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 300px;
+  height: 350px;
+}
+
+.case-info p {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.work-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.work-list li {
+  font-size: 17px;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Маленький дефис перед пунктами списка */
+.work-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+/* Блок с картинками */
+.case-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.img-wrapper {
+  width: 100%;
+  aspect-ratio: 2 / 1; /* Делаем вытянутые блоки как на макете */
+  border-radius: 40px; /* Сильное закругление */
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Секция Backstage */
+.backstage-section {
+  padding: 0px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.backstage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-gap: 30px;
+}
+
+.backstage-item {
+  width: 100%;
+  aspect-ratio: 1 / 1.2; 
+  border-radius: 35px;   
+  overflow: hidden;
+  background-color: #93d4ed; 
+}
+
+.backstage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.backstage-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Секция Услуги */
+.services-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-subtitle {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* Контейнер для сетки и стрелок */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Сетка карточек */
+.services-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: nowrap; 
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Стили карточки */
+.service-card {
+    flex: 1;
+    min-width: 250px;
+    height: 400px; 
+    padding: 20px 30px;
+    border: 1px solid #81ADD0; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    background: #fff;
+}
+
+.service-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #000000;
+}
+
+/* Кнопки-стрелки */
+.slider-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.slider-btn:hover {
+    opacity: 0.6;
+}
+
+/* Секция проектных задач */
+.tasks-section {
+    padding: 30px 20px;
+    background-image: url('resources/fon2.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.tasks-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px; /* Расстояние между парами задач */
+}
+
+.tasks-section h2{
+    margin-left: 8%;
+}
+.task-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    gap: 100px;
+    align-items: start;
+}
+
+.task-header h3 {
+    font-size: 35px;
+    margin: 0;
+    text-transform: none; 
+}
+
+.task-body p {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* ШАХМАТНЫЙ ПОРЯДОК */
+
+/* Для каждого второго элемента меняем порядок колонок */
+.task-item:nth-child(even) .task-header {
+    grid-column: 2; /* Заголовок уходит вправо */
+}
+
+.task-item:nth-child(even) .task-body {
+    grid-column: 1; /* Текст уходит влево */
+    grid-row: 1;    /* Поднимаем в ту же строку */
+    text-align: left;
+}
+
+/* Выравнивание заголовков для четных (справа) и нечетных (слева) */
+.task-item:nth-child(odd) .task-header {
+    text-align: left;
+}
+
+.task-item:nth-child(even) .task-header {
+    text-align: right;
+}
+
+.task-item:nth-child(odd) .task-body {
+    text-align: right;
+}
+
+.task-item:nth-child(even) .task-body {
+    text-align: left;
+}
+
+
+/*команда*/
+.founder-section {
+  padding: 80px 20px 0px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Akrobat', sans-serif; 
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px; 
+}
+
+/* Стили для фото */
+.founder-photo {
+  flex: 0 0 380px; 
+}
+
+.founder-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 40px; 
+  display: block;
+}
+
+/* Стили для текста */
+.founder-info {
+  flex: 1;
+  padding-top: 10px;
+}
+
+.founder-name {
+  font-size: 40px;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.founder-status .position {
+  font-size: 22px;
+}
+
+.founder-status .experience {
+  font-size: 22px;
+}
+
+.founder-education p {
+  font-size: 20px;
+  color: #000;
+}
+
+.team-section {
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Akrobat', sans-serif;
+}
+
+.main-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+/* Сетка: 4 колонки с автоматическим переносом */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 30px;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Фото члена команды */
+.member-photo {
+  width: 100%;
+  height: 320px;
+  border-radius: 40px; 
+  overflow: hidden;
+  margin-bottom: 0px;
+  background-color: #f5f5f5;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.08); 
+}
+
+/* Информация под фото */
+.member-name {
+  font-size: 25px;
+  font-weight: 700;
+  color: #81ADD0; /* Голубоватый оттенок из макета */
+  margin-bottom: 8px;
+}
+
+.member-role {
+  font-size: 15px;
+  color: #81ADD0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.member-exp, .member-edu {
+  font-size: 15px;
+  color: #81ADD0;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/*клиенты*/
+#clients{
+    background-image: url('resources/fon3.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.clients {
+    padding: 10px 20px 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Akrobat', sans-serif; 
+}
+
+.table_clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;        /* Центрирует весь ряд */
+    gap: 30px;                      /* Расстояние между карточками */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clint-card{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 0 0 calc(33.333% - 20px);   /* 3 карточки в ряд */
+    max-width: calc(33.333% - 20px);
+}
+
+.clint-card img{
+    width: 99px;
+}
+
+.clint-card h4{
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.clint-card p{
+    width: 200px;
+    font-size: 17px;
+}
+
+/*контакты*/
+.contacts {
+  padding: 0px 0 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.contacts__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.contacts__title {
+  font-size: 48px;
+  color: var(--color-primary);
+  margin-bottom: 40px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.contacts__details {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.contacts__details p {
+  margin: 0 0 5px 0;
+}
+
+
+.contacts__link-group a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+  margin-top: 0;
+}
+
+.contacts__link-group a:hover {
+  opacity: 0.7;
+}
+
+/* Стили для большого логотипа справа */
+.contacts__logo {
+  user-select: none;
+  pointer-events: none;
+}
+
+.contacts__logo img{
+    width: 360px;
+}
+
+/*футер*/
+footer.hero {
+    background-color: var(--color-primary);
+    color: var(--color-bg-light);
+    padding: 50px 0 50px;
+}
+
+.container_footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Навигация сверху */
+.hero__nav {
+    margin-bottom: 50px;   /* расстояние между меню и названием */
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* Название под меню */
+.hero__content {
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.hero__title a{
+  text-decoration: none;
+  color: var(--color-bg-light);
+}
+
+.hero__subtitle a{
+  text-decoration: none;
+  color: var(--color-bg-light);
+}
+
+.hero__subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+}
+

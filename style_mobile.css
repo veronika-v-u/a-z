@@ -1,0 +1,486 @@
+@media (max-width: 768px) {
+    html, body {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* ==================== HEADER ==================== */
+    header {
+        padding: 0px 10px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: 70px; 
+        background-image: url('resources/fon1_2.jpg');
+        background-size: cover; 
+        background-repeat: no-repeat;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+
+    /* Основной контейнер header теперь flex с тремя частями */
+    .logo {
+        flex: 1;
+    }
+
+    /* Название агентства по центру */
+    #name2 {
+        position: absolute;
+        left: 58%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10px;
+        text-align: center;
+        
+        width: 120px;
+    }
+
+    #name {
+        font-size: 20px;
+        line-height: 1;
+        margin: 0;
+    }
+
+    /* Скрываем десктопное меню */
+    .headerNav, .media {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        flex: 0 0 auto;
+        z-index: 102;
+    }
+
+    /* Кнопка бургера */
+    .menu__btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+    }
+
+    /* ==================== БУРГЕР МЕНЮ ==================== */
+    .menu__box {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #90BCDB;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 101;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        padding-top: 90px;
+        overflow-y: auto;
+
+    }
+
+    .menu__btn {
+        position: fixed;           /* Изменено с relative на fixed */
+        top: 20px;                 /* Отступ сверху */
+        right: 25px;               /* Отступ справа */
+        width: 32px;
+        height: 32px;
+        z-index: 999;              /* Очень высокий приоритет */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #menu__toggle:checked ~ .menu__box {
+        transform: translateX(0);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span,
+    #menu__toggle:checked ~ .menu__btn > span::before,
+    #menu__toggle:checked ~ .menu__btn > span::after {
+        background-color: var(--color-bg-light);
+    }
+
+    /* Блокировка скролла */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* Логотип A&Z в меню */
+    #A_Z img {
+        width: 300px;
+        margin: 30px auto 0;
+        display: block;
+        margin-left: 20%;
+    }
+
+    #main_section{
+        height: 430px;
+    }
+
+    /*Миссия*/
+    .section-title {
+        font-size: 28px;
+        padding: 0 10px;
+        margin-bottom: 0;
+    }
+
+    .container{
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mission-description p{
+        font-size: 15px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .mission-stats {
+        margin-top: -30px;
+        padding-top: 0;
+    }
+    .stat-number {
+        font-size: 50px;
+    }
+
+    .stat-text {
+        font-size: 12.45px;
+    }
+
+    .clients-section {
+        padding-top: 30px;
+    }
+
+    .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px 20px; 
+        padding-top: 20px;
+    }
+
+    .image-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .cases-section {
+        padding-top: 20px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #main-title {
+        margin-bottom: 0px;
+        padding-left: 0;
+    }
+
+    .case-name {
+        font-size: 20px;
+    }
+
+    .case-card:nth-child(even) .case-name {
+        margin-left: 0%;
+    }
+    
+    .case-info p {
+        font-size: 16px;
+    }
+
+    .case-info li {
+        font-size: 13px;
+    }
+
+    .img-wrapper {
+        height: 100px;
+    }
+    
+    .case-card {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        gap: 0;
+    }
+
+    .case-images{
+        height: 250px;
+    }
+
+    .backstage-section {
+        padding: 0px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .backstage-section h2{
+        padding-bottom: 20px;
+    }
+
+    .backstage-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 10px;
+    }
+
+    .backstage-item {
+        border-radius: 30px;   
+    }
+
+    .services-section {
+        padding: 0 10px;
+    }
+
+    .services-section h2{
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .services-subtitle {
+        margin: 0;
+        font-size: 25px;
+        font-weight: lighter;
+        padding-bottom: 10px;
+    }
+
+    .slider-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 5px;
+    }
+
+    .services-grid {
+        display: flex;
+        gap: 25px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 0 20px;
+        scrollbar-width: none;
+    }
+
+    .services-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-card {
+        flex: 0 0 75%;           /* Основная карточка занимает ~78% ширины */
+        min-width: 75%;
+        height: 360px;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+    .service-card h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .slider-btn {
+        padding: 5px;
+    }
+
+    .tasks-section {
+        padding: 0 10px;
+        padding-bottom: 30px;
+    }
+
+    .tasks-section h2 {
+        padding-left: 0;
+        margin-left: 0;
+        padding-top: 20px;
+    }
+
+    .tasks-grid {
+        gap: 0px; 
+    }
+
+    .task-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .task-header h3 {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .task-body p {
+        font-size: 16px;
+    }
+
+    .task-item:nth-child(even) .task-header {
+        text-align: left;
+    }
+
+    .task-item:nth-child(odd) .task-body {
+        text-align: left;
+    }
+
+    .founder-section {
+        padding: 20px 0 0px 0;
+    }
+
+    #founder-section{
+        gap: 0;
+    }
+
+    .founder-photo {
+        width: 290px;
+        height: 280px;
+        margin: 0 auto;         
+        overflow: hidden;
+        border-radius: 49px;    
+    }
+
+    .founder-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;        
+        object-position: center; 
+    }
+
+    .founder-name { 
+        font-size: 40px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .founder-status p {
+        font-size: 15px !important;   
+
+    }
+
+    .founder-status .position {
+        font-size: 15px !important;
+    }
+
+    .founder-status {
+        padding-bottom: 10px;
+    }
+
+    .founder-info p {
+        font-size: 15px;
+    }
+
+    .position p{
+        font-size: 15px;    
+    }
+
+    .experience {
+        font-size: 15px;
+    }
+
+    .team-section {
+        padding: 0px 0;
+        padding-bottom: 30px;
+    }
+
+    .team-section h2{
+        padding-bottom: 30px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px 30px;
+    }
+
+    .member-photo {
+        width: 290px;
+        height: 300px;
+        margin: 0 auto;         
+        overflow: hidden;
+        border-radius: 49px;    
+    }
+
+    .member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;        
+        object-position: center; 
+    }
+
+    .member-info p{
+        text-align: center;
+        margin: 0;
+        padding: 2px;
+    }
+
+    .clients {
+        padding: 10px 0px 0 0px;
+    }
+
+    .table_clients {
+        gap: 30px;                      
+        padding: 30px 10px;
+        justify-content: left;
+    }
+
+    .clint-card{
+        gap: 5px;
+        flex: 0 0 calc(50% - 20px);  
+        max-width: calc(50% - 20px);
+    }
+
+    .clint-card img{
+        width: 58px;
+    }
+
+    .clint-card h4{
+        font-size: 16px;
+    }
+
+    .clint-card p{
+        width: 100px;
+        font-size: 10px;
+    }
+
+    .contacts__title {
+        font-size: 28px;
+        margin-bottom: 28px;
+        margin-top: 30px;
+    }
+
+    .contacts__details {
+        font-size: 17px;
+    }
+
+    .contacts__logo img{
+        display: none;
+    }
+
+    .contacts__wrapper{
+        justify-content: left;
+        height: 340px;
+    }
+
+    footer.hero {
+        padding: 30px 0 30px;
+    }
+
+    .hero__nav {
+        display: none;
+    }
+
+    .hero__title {
+        font-size: 24px;
+        margin: 0 0 5px 0;
+    }
+
+    .hero__subtitle {
+        font-size: 12px;
+        font-weight: lighter;
+        margin: 0;
+    }
+
+}
