@@ -29,8 +29,8 @@ header{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 0px;
-  padding: 0px 8% 0px 6%;
+  padding: 0px 10% 0px 9%;
+  margin: 0 auto;
 }
 
 .headerNav {
@@ -207,6 +207,16 @@ header {
  #menu__toggle:checked ~ .menu__box { 
   transform: translateX(0); 
   visibility: visible; 
+}
+
+.slogan{
+  max-width: 1200px;
+  padding: 80px 20px;
+  margin: 0 auto;
+  font-size: 60px;
+  color: #fff;
+  padding-top: 150px;
+  font-weight: 600;
 }
 
 /*Миссия*/
@@ -907,8 +917,40 @@ footer.hero {
 @media (min-width: 769px) {
     header {
         position: fixed;
-        width: 90%;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
         z-index: 100;
+        background-color: transparent;
+        transition: background-color 0.25s ease;
+    }
+    
+    /* Внутренний контейнер для контента хедера */
+    header .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Распределяем пространство между элементами */
+        width: 100%;
+    }
+
+    /* Логотип - слева */
+    header .logo {
+        flex-shrink: 0;
+    }
+
+    /* Навигация и соцсети - справа */
+    .headerNav {
+        margin-left: auto; /* Прижимает к правому краю */
+    }
+
+    .media {
+        flex-shrink: 0;
     }
 
     /* Хедер становится белым при скролле */

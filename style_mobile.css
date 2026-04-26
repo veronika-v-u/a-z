@@ -25,6 +25,10 @@
         z-index: 100;
     }
 
+    header .header-container{
+        align-items: flex-start;
+    }
+
     /* Хедер становится белым при скролле */
     header.header--white {
         background-color: #FFFFFF !important;
@@ -62,11 +66,11 @@
     /* Название агентства по центру */
     #name2 {
         position: absolute;
-        left: 58%;
+        left: 54%;
         top: 50%;
         transform: translate(-50%, -50%);
         font-size: 10px;
-        text-align: center;
+        text-align: left;
         
         width: 120px;
     }
@@ -75,6 +79,7 @@
         font-size: 20px;
         line-height: 1;
         margin: 0;
+        padding-top: 20px;
     }
 
     /* Скрываем десктопное меню */
@@ -88,6 +93,14 @@
         z-index: 102;
     }
 
+    .media_s{
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .media_s #tg img{
+        width: 42px;
+    }
     /* Кнопка бургера */
     .menu__btn {
         position: relative;
@@ -104,7 +117,7 @@
         right: 0;
         width: 100%;
         height: 100vh;
-        background-color: #90BCDB;
+        background: linear-gradient(-150deg, #a2cfef 0%, #90BCDB 20%, #2375ac 100%);
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: 101;
@@ -154,9 +167,18 @@
         height: 430px;
     }
 
+    .slogan{
+        padding: 0px 10px;
+        font-size: 25px;
+        color: #fff;
+        padding-top: 80px;
+        font-weight: 600;
+    }
+
     /*Миссия*/
     .mission-section{
         margin-bottom: 20px;
+        margin-top: 40px;
     }
 
     .section-title {
@@ -348,7 +370,7 @@
     }
 
     .tasks-grid {
-        gap: 0px; 
+        gap: 15px; 
     }
 
     .task-item {
