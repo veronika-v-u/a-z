@@ -219,6 +219,14 @@ header {
   font-weight: 600;
 }
 
+.a_z_img {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    z-index: 10;
+    margin-right: 0;
+    top: 85%
+}
 /*Миссия*/
 
 .mission-section {

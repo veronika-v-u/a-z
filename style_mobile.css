@@ -10,6 +10,10 @@
         position: relative;
     }
     
+    #main_section {
+        min-height: 100vh;
+        height: 100%;
+    }
     /* ==================== HEADER ==================== */
     header {
         padding: 0px 10px;
@@ -17,7 +21,6 @@
         align-items: center;
         position: relative;
         height: 70px; 
-        background-image: url('resources/fon1_2.jpg');
         background-size: cover; 
         background-repeat: no-repeat;
         position: fixed;
@@ -165,16 +168,32 @@
 
     #main_section{
         height: 430px;
+        position: relative; 
     }
 
     .slogan{
         padding: 0px 10px;
-        font-size: 25px;
+        font-size: 35px;
         color: #fff;
         padding-top: 80px;
         font-weight: 600;
+        width: 300px;
+        display: block;
+        margin: 0;
     }
 
+    .a_z_img {
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+        z-index: 10;
+    }
+
+    .a_z_img img {
+        width: 250px;
+        height: auto;
+        display: block;
+    }
     /*Миссия*/
     .mission-section{
         margin-bottom: 20px;
@@ -366,17 +385,18 @@
     .tasks-section h2 {
         padding-left: 0;
         margin-left: 0;
-        padding-top: 20px;
+        padding-top: 50px;
+        padding-bottom: 10px;
     }
 
     .tasks-grid {
-        gap: 15px; 
+        gap: 20px; 
     }
 
     .task-item {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
     .task-header h3 {
