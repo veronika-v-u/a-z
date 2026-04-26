@@ -185,3 +185,23 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateHeader);
     window.addEventListener("resize", updateHeader);
 });
+
+
+//дЕСКТОПНЫЙ
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+
+    function updateHeader() {
+        if (window.innerWidth >= 769) {
+            if (window.scrollY > 50) {
+                header.classList.add("header--white");
+            } else {
+                header.classList.remove("header--white");
+            }
+        }
+    }
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader);
+    window.addEventListener("resize", updateHeader);
+});

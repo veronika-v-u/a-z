@@ -26,11 +26,11 @@ body{
 }
 
 header{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0px;
-    padding: 20px 110px 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0px;
+  padding: 0px 8% 0px 6%;
 }
 
 .headerNav {
@@ -215,6 +215,7 @@ header {
   padding: 0;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 150px;
 }
 
 .container {
@@ -269,6 +270,7 @@ header {
   padding: 0;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .section-title {
@@ -325,6 +327,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Akrobat', sans-serif; 
+  margin-bottom: 70px;
 }
 
 #main-title {
@@ -336,7 +339,7 @@ header {
   flex-wrap: wrap; /* Позволяет заголовку занять верхнюю строку */
   align-items: flex-start;
   gap: 0px 80px; /* 40px отступ снизу от заголовка, 80px между текстом и фото */
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   max-width: 1200px;
 }
 
@@ -424,6 +427,7 @@ header {
   padding: 0px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .backstage-grid {
@@ -457,6 +461,7 @@ header {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .services-subtitle {
@@ -532,6 +537,7 @@ header {
     background-size: cover; 
     background-repeat: no-repeat;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 .tasks-grid {
@@ -540,7 +546,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 60px; /* Расстояние между парами задач */
+    gap: 20px; /* Расстояние между парами задач */
 }
 
 .tasks-section h2{
@@ -601,6 +607,8 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Akrobat', sans-serif; 
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -652,6 +660,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Akrobat', sans-serif;
+  margin-bottom: 50px;
 }
 
 .main-title {
@@ -725,7 +734,7 @@ header {
     background-repeat: no-repeat;
 }
 .clients {
-    padding: 10px 20px 0 20px;
+    padding: 30px 20px 30px 20px;
     max-width: 1200px;
     margin: 0 auto;
     font-family: 'Akrobat', sans-serif; 
@@ -767,7 +776,7 @@ header {
 
 /*контакты*/
 .contacts {
-  padding: 0px 0 20px;
+  padding: 30px 0 40px;
 }
 
 .container {
@@ -893,3 +902,41 @@ footer.hero {
     margin: 0;
 }
 
+
+/* Фиксация хедера для десктопной версии */
+@media (min-width: 769px) {
+    header {
+        position: fixed;
+        width: 90%;
+        z-index: 100;
+    }
+
+    /* Хедер становится белым при скролле */
+    header.header--white {
+        background-color: #FFFFFF !important;
+        background-image: none !important;
+        transition: background-color 0.25s ease;
+    }
+
+    /* Логотип и текст — голубые */
+    header.header--white #name,
+    header.header--white #name2,
+    header.header--white .logo a {
+        color: var(--color-primary) !important;
+    }
+
+    header.header--white .headerNav ul li a {
+        color: var(--color-primary) !important;
+    }
+
+    header.header--white .headerNav ul li a:hover {
+        color: var(--color-accent) !important;
+    }
+
+    header.header--white .media img {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(7%) saturate(1325%) hue-rotate(175deg) brightness(92%) contrast(85%);
+    }
+    
+
+
+}
