@@ -9,7 +9,7 @@
         overflow-x: hidden;
         position: relative;
     }
-
+    
     /* ==================== HEADER ==================== */
     header {
         padding: 0px 10px;
@@ -24,6 +24,35 @@
         width: 100%;
         z-index: 100;
     }
+
+    /* Хедер становится белым при скролле */
+    header.header--white {
+        background-color: #FFFFFF !important;
+        background-image: none !important;
+        transition: background-color 0.25s ease;
+    }
+
+    /* Логотип и текст — голубые */
+    header.header--white #name,
+    header.header--white #name2,
+    header.header--white .logo a {
+        color: var(--color-primary) !important;
+    }
+
+    /* Линии бургера — голубые */
+    header.header--white .menu__btn > span,
+    header.header--white .menu__btn > span::before,
+    header.header--white .menu__btn > span::after {
+        background-color: var(--color-primary) !important;
+    }
+
+    /* Чтобы крестик тоже был голубым */
+    #menu__toggle:checked ~ .menu__btn > span,
+    #menu__toggle:checked ~ .menu__btn > span::before,
+    #menu__toggle:checked ~ .menu__btn > span::after {
+        background-color: var(--color-primary) !important;
+    }
+
 
     /* Основной контейнер header теперь flex с тремя частями */
     .logo {
@@ -126,6 +155,10 @@
     }
 
     /*Миссия*/
+    .mission-section{
+        margin-bottom: 20px;
+    }
+
     .section-title {
         font-size: 28px;
         padding: 0 10px;
@@ -158,6 +191,7 @@
 
     .clients-section {
         padding-top: 30px;
+        margin-bottom: 30px;
     }
 
     .clients-grid {
@@ -176,6 +210,7 @@
         padding-bottom: 0px;
         padding-left: 10px;
         padding-right: 10px;
+        margin-bottom: 50px;
     }
 
     #main-title {
@@ -204,7 +239,7 @@
     }
     
     .case-card {
-        margin-bottom: 0;
+        margin-bottom: 20px;
         padding-bottom: 0;
         gap: 0;
     }
@@ -217,6 +252,7 @@
         padding: 0px;
         max-width: 1200px;
         margin: 0 auto;
+        margin-bottom: 50px;
     }
 
     .backstage-section h2{
@@ -235,6 +271,18 @@
 
     .services-section {
         padding: 0 10px;
+        margin-bottom: 50px;
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+    }
+
+    .slider-btn svg {
+        width: 18px;
+        height: 30px;
     }
 
     .services-section h2{
@@ -290,7 +338,7 @@
 
     .tasks-section {
         padding: 0 10px;
-        padding-bottom: 30px;
+        padding-bottom: 40px;
     }
 
     .tasks-section h2 {
@@ -311,7 +359,7 @@
 
     .task-header h3 {
         font-size: 25px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .task-body p {
@@ -327,7 +375,8 @@
     }
 
     .founder-section {
-        padding: 20px 0 0px 0;
+        padding: 20px 0 20px 0;
+        margin-top: 30px;
     }
 
     #founder-section{
@@ -383,6 +432,7 @@
     .team-section {
         padding: 0px 0;
         padding-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .team-section h2{
@@ -417,7 +467,7 @@
     }
 
     .clients {
-        padding: 10px 0px 0 0px;
+        padding: 20px 0px 20px 0px;
     }
 
     .table_clients {
@@ -445,6 +495,9 @@
         font-size: 10px;
     }
 
+    .contacts{
+        margin: 20px 0 10px;
+    }
     .contacts__title {
         font-size: 28px;
         margin-bottom: 28px;

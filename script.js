@@ -165,3 +165,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/*хедер цвет */
+// Мобильный хедер: смена цвета при скролле
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+
+    function updateHeader() {
+        if (window.innerWidth <= 768) {
+            if (window.scrollY > 10) {
+                header.classList.add("header--white");
+            } else {
+                header.classList.remove("header--white");
+            }
+        }
+    }
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader);
+    window.addEventListener("resize", updateHeader);
+});
