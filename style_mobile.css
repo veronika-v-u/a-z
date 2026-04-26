@@ -102,7 +102,7 @@
     }
 
     .media_s #tg img{
-        width: 42px;
+        width: 36px;
     }
     /* Кнопка бургера */
     .menu__btn {
@@ -286,6 +286,7 @@
     }
 
     .case-images{
+        padding-top: 15px;
         height: 250px;
     }
 

@@ -149,7 +149,7 @@ header {
 }
 
 .menu__box img{
-  width: 35px;
+  width: 30px;
   padding-top: 10px;
   margin-left: 20px;
   margin-bottom: 0;
@@ -221,12 +221,13 @@ header {
 
 .a_z_img {
     position: absolute;
-    right: -20px;
+    right: 0px;
     bottom: 0px;
     z-index: 10;
     margin-right: 0;
-    top: 85%
+    top: 85%;
 }
+
 /*Миссия*/
 
 .mission-section {
