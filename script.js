@@ -205,3 +205,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateHeader);
     window.addEventListener("resize", updateHeader);
 });
+
+  // JS: показываем кнопку после прокрутки первой секции и скроллим наверх по клику
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('backToTop');
+  const firstSection = document.querySelector('section');
+
+  if (!btn || !firstSection) return;
+
+  const threshold = firstSection.offsetHeight;
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > threshold) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
