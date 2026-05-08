@@ -252,8 +252,8 @@ header {
     align-items: center;
     justify-content: center;
     gap: 12px;              
-    background-color: var(--color-primary);
-    color: #fff;
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
     padding: 15px 25px;        
     border-radius: 50px;      
     transition: all 0.3s ease; 
@@ -271,13 +271,18 @@ header {
 .button_tg img {
     width: 20px;             
     height: auto;
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) saturate(100%) invert(75%) sepia(7%) saturate(1325%) hue-rotate(175deg) brightness(92%) contrast(85%); 
 }
 
 .button_tg:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     transform: translateY(-2px);         
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    color: var(--color-bg-light);
+}
+
+.button_tg:hover img{
+    filter: none;
 }
 
 .tg-button-link {
@@ -739,8 +744,8 @@ header {
     margin-bottom: 50px;
 }
 
-.task-header h3 {
-    font-size: 30px;
+.task-header h4 {
+    font-size: 25px;
     margin: 0;
     text-transform: none; 
 }
@@ -818,7 +823,6 @@ header {
 .founder-name {
   font-size: 40px;
   margin: 0 0 20px 0;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
