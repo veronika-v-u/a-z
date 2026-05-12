@@ -249,8 +249,9 @@
     }
 
     .mission-stats {
-        margin-top: -30px;
+        margin-top: 10px;
         padding-top: 0;
+        margin-bottom: 10px;
     }
     .stat-number {
         font-size: 50px;
@@ -324,6 +325,10 @@
         margin-bottom: 40px;
     }
 
+    .features__grid {
+        margin-top: 20px;
+    }
+
     .features__list {
         gap: 50px;
     }
@@ -343,7 +348,7 @@
     }
     
     .case-card {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         padding-bottom: 0;
         gap: 0;
     }
