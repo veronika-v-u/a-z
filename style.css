@@ -458,6 +458,57 @@ header {
       filter: brightness(0) saturate(100%) invert(75%) sepia(7%) saturate(1325%) hue-rotate(175deg) brightness(92%) contrast(85%);
 }
 
+.button_conteiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;  
+    padding: 50px 0 20px 0;           
+    justify-content: center;    
+    align-items: center;
+}
+
+.buttons_tg {
+    display: inline-flex;    
+    align-items: center;
+    justify-content: center;
+    gap: 12px;              
+    background-color: var(--color-primary);
+    color: var(--color-bg-light);
+    padding: 15px 25px;        
+    border-radius: 50px;      
+    transition: all 0.3s ease; 
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(129, 173, 208, 0.3); 
+}
+
+.buttons_tg p, .buttons_tg span {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.buttons_tg img {
+    width: 20px;             
+    height: auto;
+}
+
+.buttons_tg:hover {
+    background-color: var(--color-bg-light);
+    transform: translateY(-2px);         
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    color: var(--color-primary);
+}
+
+.buttos_tg:hover img{
+    filter: brightness(0) saturate(100%) invert(75%) sepia(7%) saturate(1325%) hue-rotate(175deg) brightness(92%) contrast(85%); 
+}
+
+.tg-buttons-link {
+    text-decoration: none;
+    display: inline-block; 
+}
+
 /*все клиенты*/
 .cases-section {
   padding: 80px 20px;
@@ -492,8 +543,6 @@ header {
   flex-direction: row-reverse;
 }
 
-
-
 .case-info {
   flex: 1;
   min-width: 300px; /* Чтобы на средних экранах не слишком сужалось */
@@ -509,7 +558,7 @@ header {
 }
 
 .case-info p {
-  font-size: 20px;
+  font-size: 17px;
   margin-bottom: 0px;
 }
 
@@ -524,7 +573,6 @@ header {
   position: relative;
   padding-left: 15px;
   margin-bottom: 5px;
-  color: #333;
 }
 
 /* Маленький дефис перед пунктами списка */
@@ -541,11 +589,12 @@ header {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 450px;
 }
 
 .img-wrapper {
   width: 100%;
-  aspect-ratio: 2 / 1; /* Делаем вытянутые блоки как на макете */
+  aspect-ratio: 3 / 2;
   border-radius: 40px; /* Сильное закругление */
   overflow: hidden;
   background: #f0f0f0;
@@ -606,7 +655,7 @@ header {
   padding: 0px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 .backstage-grid {
@@ -637,7 +686,7 @@ header {
 
 /* Секция Услуги */
 .services-section {
-    padding: 80px 20px;
+    padding: 70px 20px 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 50px;
@@ -774,11 +823,11 @@ header {
 }
 
 .task-item:nth-child(even) .task-header {
-    text-align: right;
+    text-align: left;
 }
 
 .task-item:nth-child(odd) .task-body {
-    text-align: right;
+    text-align: left;
 }
 
 .task-item:nth-child(even) .task-body {
