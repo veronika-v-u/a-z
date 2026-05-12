@@ -500,7 +500,7 @@ header {
     color: var(--color-primary);
 }
 
-.buttos_tg:hover img{
+.button_conteiner:hover img{
     filter: brightness(0) saturate(100%) invert(75%) sepia(7%) saturate(1325%) hue-rotate(175deg) brightness(92%) contrast(85%); 
 }
 
