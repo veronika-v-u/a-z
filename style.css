@@ -366,9 +366,10 @@ header {
 }
 
 .section-title {
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 40px;
   color: #000;
+  font-weight: 600;
 }
 
 /* Сетка 3 колонки */
@@ -998,8 +999,9 @@ header {
 .clint-card h4{
     margin-top: 0;
     padding-top: 0;
-    font-size: 30px;
+    font-size: 23px;
     margin-bottom: 0;
+    font-weight: 600;
 }
 
 .clint-card p{

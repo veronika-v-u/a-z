@@ -227,7 +227,7 @@
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 23px;
         padding: 0 10px;
         margin-bottom: 0;
     }
@@ -622,6 +622,7 @@
 
     .clint-card h4{
         font-size: 16px;
+        font-weight: 600;
     }
 
     .clint-card p{
@@ -648,9 +649,12 @@
 
     .contacts__wrapper{
         justify-content: left;
-        height: 340px;
+        height: 250px;
     }
 
+    #button_contact{
+       padding: 0px;
+    }
     footer.hero {
         padding: 30px 0 30px;
     }
