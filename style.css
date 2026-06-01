@@ -607,6 +607,61 @@ header {
   object-fit: cover;
 }
 
+.case-card .examples {
+  flex: 1 0 100%;    /* Заставляет блок занимать ровно 100% ширины строки */
+  max-width: 100%;   /* Запрещает растягиваться шире родителя */
+  box-sizing: border-box;
+}
+
+.examples{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0 !important;
+}
+
+.example{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.examples h2{
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.ex_img_phone img{
+  width: 211px;
+}
+
+.ex_img img{
+  width: 848px;
+}
+
+.feedback{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.feedback p{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+}
+
+.feedback img{
+  width: 685px;
+}
+
 /*Цитата*/
 .quote-section {
   display: flex;
@@ -1007,6 +1062,187 @@ header {
 .clint-card p{
     width: 200px;
     font-size: 17px;
+}
+ 
+/*Отзывы*/
+.Review{
+  padding: 30px 20px 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review_button{
+  display: flex;
+}
+
+.arrow_button button{
+  background-color: none;
+}
+
+.arrow_button button img{
+  width: 70px;
+}
+
+.Reviews_list{
+  padding-left: 20px;
+  font-size: 15px;
+  width: 330px;
+  height: 260px; 
+  padding: 20px 30px;
+  border: 1px solid #81ADD0; 
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Reviews_list h3{
+  text-align: center;
+}
+
+
+.Reviews_block {
+  position: relative;
+}
+
+.Reviews_list {
+  padding-top: 20px; 
+  padding-bottom: 30px;    
+  height: 480px;           
+  display: flex;
+  flex-direction: column;
+  align-items: center;       
+  background-color: var(--color-bg-light);
+}
+
+.professions {
+  font-weight: light;
+  text-align: center;
+}
+
+.Reviews_list p{
+  width: 310px;
+}
+
+.review_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.arrow_buttons.left,
+.arrow_buttons.right{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+.arrow_buttons.left{ left: 8px; }
+.arrow_buttons.right{ right: 8px; }
+
+.arrow_buttons button{
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.arrow_buttons button img{ width: 100%; height: 100%; object-fit: contain; }
+
+.Reviews{
+  display: flex;
+  gap: 30px;                  
+  transition: transform 350ms ease;
+  will-change: transform;
+  width: max-content;      
+  margin: 0;                  
+  padding: 0;
+  box-sizing: border-box;     
+}
+
+
+.itc-slider__wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.itc-slider__item {
+  flex: 0 0 50%;
+  max-width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.review_button{
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;            
+  padding: 0 65px;            
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 900px){
+  .review_button{
+    padding: 0 65px;
+    overflow: hidden;
+  }
+
+  .Reviews{
+    width: calc(360px * 3 + 20px * 2);
+    margin: 0 auto;
+  }
+
+
+}
+
+@media (max-width: 899px){
+  .review_button{
+    padding: 0 48px;
+    overflow: hidden;
+    width: 360px;
+    margin: 0 auto;
+  }
+
+  .Reviews{
+    width: max-content;
+    margin: 0 auto;
+    padding-left: 0 !important; 
+  }
+
+  .Reviews_block{
+    flex: 0 0 auto;
+    width: 350px;
+    box-sizing: border-box;
+  }
+
+  .review_button::before{
+    content: "";
+    display: block;
+    height: 0;
+    margin: 0 auto;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .arrow_buttons button{
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
 }
 
 /*контакты*/

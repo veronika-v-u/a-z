@@ -227,3 +227,98 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
+
+
+//отзывы 
+(function(){
+  const track = document.getElementById('reviewsTrack');
+  if (!track) return;
+
+  const leftBtn = document.querySelector('.arrow_buttons.left button');
+  const rightBtn = document.querySelector('.arrow_buttons.right button');
+
+  let perView = getPerView(); // 3 или 1
+  let isMoving = false;
+  let index = 0;
+
+  function getPerView(){
+    return window.matchMedia('(max-width: 899px)').matches ? 1 : 3;
+  }
+
+  function clearClones(){
+    Array.from(track.children).forEach(n => { if (n.classList && n.classList.contains('__clone')) n.remove(); });
+  }
+
+  function buildClones(){
+    clearClones();
+    const items = Array.from(track.querySelectorAll('.Reviews_block'));
+    perView = getPerView();
+    if (items.length === 0) return;
+    const first = items.slice(0, perView).map(n => n.cloneNode(true));
+    const last = items.slice(-perView).map(n => n.cloneNode(true));
+    last.reverse().forEach(n => { n.classList.add('__clone'); track.insertBefore(n, track.firstChild); });
+    first.forEach(n => { n.classList.add('__clone'); track.appendChild(n); });
+  }
+
+  function stepSize(){
+    const item = track.querySelector('.Reviews_block');
+    if (!item) return 0;
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 20;
+    return item.getBoundingClientRect().width + gap;
+  }
+
+  function applyTransform(noTransition){
+    const step = stepSize();
+    if (noTransition) track.style.transition = 'none';
+    else track.style.transition = 'transform 350ms ease';
+    const offset = -index * step;
+    track.style.transform = `translateX(${offset}px)`;
+    if (noTransition){
+      requestAnimationFrame(()=> track.style.transition = '');
+    }
+  }
+
+  function setInitial(){
+    perView = getPerView();
+    buildClones();
+    index = perView;
+    // позиция должна центрироваться так, чтобы видна была область из .review_button::before
+    applyTransform(true);
+  }
+
+  function move(dir){
+    if (isMoving) return;
+    isMoving = true;
+    index += dir;
+    applyTransform(false);
+    track.addEventListener('transitionend', onEnd, { once: true });
+  }
+
+  function onEnd(){
+    const total = track.children.length;
+    if (index < perView){
+      index = index + (total - perView*2);
+      applyTransform(true);
+    } else if (index >= total - perView){
+      index = index - (total - perView*2);
+      applyTransform(true);
+    }
+    isMoving = false;
+  }
+
+  if (rightBtn) rightBtn.addEventListener('click', ()=> move(1));
+  if (leftBtn) leftBtn.addEventListener('click', ()=> move(-1));
+
+  let rt;
+  window.addEventListener('resize', ()=> {
+    clearTimeout(rt);
+    rt = setTimeout(()=> {
+      const newPer = getPerView();
+      if (newPer !== perView) setInitial();
+      else applyTransform(true);
+    }, 120);
+  });
+
+  requestAnimationFrame(setInitial);
+})();
