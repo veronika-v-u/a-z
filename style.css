@@ -582,15 +582,9 @@ header {
 }
 
 .price-inst{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-primary);
-  color: var(--color-bg-light);
-  width: 230px;
   font-size: 20px;
-  margin: 40px auto;
 }
+
 
 .inst-pro {
     position: relative;
@@ -611,7 +605,7 @@ header {
 }
 
 .object-inst img {
-    width: 1200px; 
+    width: 1400px; 
     height: auto;
     display: block;
 }
