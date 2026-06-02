@@ -179,7 +179,7 @@
 
     .slogan{
         padding: 0px 10px;
-        font-size: 35px;
+        font-size: 30px;
         color: #fff;
         padding-top: 80px;
         font-weight: 600;
@@ -188,8 +188,12 @@
         margin: 0;
     }
 
+    .slogan br{
+        display: none;
+    }
+
     .slogan_2 {
-        font-size: 18px;
+        font-size: 15px;
         margin-top: -20px;
         width: 320px;
     }
@@ -346,11 +350,42 @@
         height: 60px;
         margin-bottom: 10px;   
     }
-    
+
+    .inst-pro {
+        padding: 10px 0px;
+        margin-top: 30px;
+    }
+
+    .insta-pro {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pro-grid {
+        padding: 15px 15px;
+        margin-top: 20px;
+    }
+
+    .pro-grid p {
+        width: 310px;
+    }
+
+
+    .price-inst{
+        width: 250px;
+        border-radius: 50px;
+        font-size: 18px;
+        margin: 40px auto;
+    }
+        
     .case-card {
         margin-bottom: 40px;
         padding-bottom: 0;
         gap: 0;
+    }
+
+    .object-inst {
+        display: none;
     }
 
     .examples{

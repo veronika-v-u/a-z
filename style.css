@@ -510,6 +510,113 @@ header {
     display: inline-block; 
 }
 
+/*instagram PRO*/
+.inst-pro {
+  background-image: url('resources/fon4.png');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  padding: 30px 0px;
+  margin-top: 50px;
+}
+
+.insta-pro{
+  padding: 0px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.pro-grid {
+  border-radius: 30px;
+  border: 3px solid #81ADD0; 
+  background-color: var(--color-bg-light);
+  padding: 30px 30px;
+  margin-top: 30px;
+}
+
+.pro-grid p {
+  width: 450px;
+}
+
+.pro-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.pro-grid li {
+  font-size: 17px;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+.pro-grid li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+.pro-card p {
+    margin-top: 0;
+    margin-bottom: 6px;      
+    line-height: 1.2;         
+}
+
+.pro-card div {
+    margin-bottom: 15px;     
+}
+
+.pro-card div:last-child {
+    margin-bottom: 0;
+}
+
+.pro-card ul {
+    margin-top: 0;
+    margin-bottom: 15px;    
+}
+
+.pro-card ul li {
+    margin-bottom: 4px;      
+    line-height: 1.0;
+}
+
+.price-inst{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-bg-light);
+  width: 280px;
+  border-radius: 50px;
+  font-size: 20px;
+  margin: 40px auto;
+}
+
+.inst-pro {
+    position: relative;
+    overflow: hidden; 
+}
+
+.insta-pro {
+    position: relative; 
+}
+
+.object-inst {
+    position: absolute;
+    top: 50%; 
+    right: -50%; 
+    transform: translateY(-50%); 
+    z-index: 2; 
+    pointer-events: none; 
+}
+
+.object-inst img {
+    width: 1200px; 
+    height: auto;
+    display: block;
+}
+
 /*все клиенты*/
 .cases-section {
   padding: 80px 20px;
