@@ -752,5 +752,15 @@
         font-weight: lighter;
         margin: 0;
     }
+    
+    .menu__box a.menu__item {
+        touch-action: manipulation; 
+        -webkit-tap-highlight-color: transparent; 
+        transition: color 0.1s ease !important; 
+    }
+
+    .menu__box a.menu__item:active {
+        transition: none !important; 
+    }
 
 }
