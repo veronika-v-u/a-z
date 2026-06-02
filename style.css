@@ -587,8 +587,7 @@ header {
   justify-content: center;
   background-color: var(--color-primary);
   color: var(--color-bg-light);
-  width: 280px;
-  border-radius: 50px;
+  width: 230px;
   font-size: 20px;
   margin: 40px auto;
 }
